@@ -1,9 +1,33 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
+
+
+import { MegaMenuItem } from 'primeng/api';
 
 @Component({
     templateUrl: './blocks.component.html'
 })
-export class BlocksComponent{
+export class BlocksComponent implements OnInit {
+
+
+    breadcrumbItems: MenuItem[] = [];
+
+
+    ngOnInit() {
+    
+    
+        
+            this.breadcrumbItems = [];
+            this.breadcrumbItems.push({ label: 'Electronics' });
+            this.breadcrumbItems.push({ label: 'Computer' });
+            this.breadcrumbItems.push({ label: 'Notebook' });
+            this.breadcrumbItems.push({ label: 'Accessories' });
+            this.breadcrumbItems.push({ label: 'Backpacks' });
+            this.breadcrumbItems.push({ label: 'Item' });
+
+    
+    }    
+    
 
     block1: string = `
 <div class="grid grid-nogutter surface-section text-800">
